@@ -3,7 +3,7 @@ import java.lang.*;
 public class Main {
     public static String start = "A", help = "B", end = "C";
     public static void main(String[] args) {
-        int number = 9;
+        int number = 3;
         System.out.println(start+" "+help+" "+end);
         moveMany(number, start, help, end);
     }
@@ -14,13 +14,14 @@ public class Main {
             moveOne(start, end);
         }
         else{
-            moveMany(n-1, start, help, end); // Move many from start to help.
+            moveMany(n-1, start, end, help); // Move many from start to help.
+            System.out.println("hei");
             moveOne(start, end); //Move one from bottom to the end.
-            moveMany(n-1, end, help, start); // Move many from help to end.
+            moveMany(n-1, help, start, end); // Move many from help to end.
         }
     }
 
     public static void moveOne(String st, String en){
-        System.out.println(en+" "+help+" "+st);
+        System.out.println("Flytt: "+st+" Til: "+en);
     }
 }
